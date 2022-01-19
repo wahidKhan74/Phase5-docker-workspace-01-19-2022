@@ -1,0 +1,34 @@
+# 1. first create image
+> sudo docker build -t phpcode .
+
+# 2. create a tag from docker image
+> sudo docker tag phpcode:latest  wahid74/phpcode:v1.0.0
+> sudo docker tag phpcode:latest  wahid74/phpcode:v1.0.1
+> sudo docker tag phpcode:latest  wahid74/phpcode:v2.0.0
+> sudo docker tag phpcode:latest  wahid74/phpcode
+
+# 3. login into docker hub
+> sudo docker login
+   > username
+   > password
+
+# 4. push docker images
+> sudo docker push wahid74/phpcode:v1.0.0
+
+--------------------------------------------------------------------------------
+# 1. first create image
+> sudo docker build -t ecom-webservice .
+
+# 2. create a tag from docker image
+> sudo docker tag ecom-webservice:latest  wahid74/ecom-webservice:v1.0.0
+> sudo docker tag ecom-webservice:latest  wahid74/ecom-webservice:v1.0.1
+> sudo docker tag ecom-webservice:latest  wahid74/ecom-webservice:v2.0.0
+> sudo docker tag ecom-webservice:latest  wahid74/ecom-webservice
+
+# 3. login into docker hub
+> sudo docker login
+   > username
+   > password
+
+# 4. push docker images
+> sudo docker push wahid74/ecom-webservice:v1.0.0

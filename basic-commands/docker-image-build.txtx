@@ -1,0 +1,23 @@
+# Create a custom/project docker image.
+# Docker file : A Dockerfile is a text document which contains all the commands 
+# that a user can call on the command line to assemble an image.
+
+# step 1 : Create a Dockerfile.
+
+# step 2 : Use a Dockerfile to build image.
+    > sudo docker build -t phpcode -f path / Dockerfile . or 
+    > sudo docker build -t phpcode .
+
+# step 3 : Use a custom docker image to run container.
+    > sudo docker run --name phpserver -p 80:80 -d phpcode 
+
+--------------------------------------------------------------------------------------
+# Create a image for springboot webservice
+# create a Dockerfile
+> sudo docker image build -t ecom-webservice .
+
+#-> run container by using custom image
+> sudo docker container run  --name ecom-webserver -p 8081:8081 -d ecom-webservice
+
+#-> verify log 
+> sudo docker container logs ecom-webserver
