@@ -1,0 +1,27 @@
+# deploy docker container to docker swarm cluster.
+
+step 1: Pull docker image -> (based on custome image )
+       > sudo docker pull wahid74/ecom-webservice
+
+step 2: Create a docker swarm service
+       > sudo docker service create -p 8081:8081 --name ecom-service  wahid74/ecom-webservice
+
+step 3: verify the services
+       > sudo docker service ls
+
+step 4: verify container on docker swarm cluster
+       > sudo docker ps -a
+
+----------------------------------------------------------------------------------------------------
+
+step 1: Pull docker image -> (based on custome image )
+       > sudo docker pull wahid74/phpcode
+
+step 2: Create a docker swarm service
+       > sudo docker service create -p 80:80 --name php-service  wahid74/phpcode
+
+step 3: verify the services
+       > sudo docker service ls
+
+step 4: verify container on docker swarm cluster
+       > sudo docker ps -a
