@@ -1,0 +1,26 @@
+# Create a worker node -> on Ec2  -> ubuntu 20.0.4
+1) install docker   -> use docker install file.
+2) install kubernetese  -> kubernetes install file.
+3) Preconfig VM before kubernetese wokrer node setup.
+      > 31. > Disable swapoff memomry
+        > sudo swapoff -a
+        > sudo sed -i '/ swap / s/^/#/' /etc/fstab
+
+      > 3.2 > Add croup
+        > sudo vim /etc/docker/daemon.json
+            {
+                "exec-opts": ["native.cgroupdriver=systemd"]
+            }
+        ( Hint in VIm : -> Press I -> insert -> past json -> Press Esc ->  shift + : => wq => enter )
+        > sudo systemctl daemon-reload
+        > sudo systemctl restart docker
+        > sudo systemctl restart kubelet
+        > sudo docker info |grep -i cgroup
+
+      > 3.3 > Assign unique hostname
+        > sudo hostnamectl set-hostname woker01
+
+      > 3.4 > Reboot Instance.
+
+4) Join Node to kubernetese master node
+     > sudo kubeadm join 172.31.92.56:6443 --token con131.hs8nziz4xnj0pkqh --discovery-token-ca-cert-hash sha256:d3d8b7f9e956ecf60afcc6ae4d000e3b33a940de84ae1a2c38e1d889041fa7fe

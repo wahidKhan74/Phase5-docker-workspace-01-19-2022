@@ -1,0 +1,13 @@
+1) Create a master node 
+     > Create a ec2 instance  -> ubuntu 20.0.4
+     > install docker 
+     > install kubernetese ubuntu
+     > Preconfig before cluster setup 
+     > Create a master node -> initializing a cluster
+2) Create a worker(slave) node
+     > Create a ec2 instance  -> ubuntu 20.0.4
+     > install docker 
+     > install kubernetese ubuntu
+     > Preconfig before cluster setup 
+     > create workwer node and Join     
+3) Join Worker Node with Master
