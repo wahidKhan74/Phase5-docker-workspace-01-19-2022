@@ -1,0 +1,28 @@
+# verify docker images
+> sudo docker images
+
+# verify docker containers
+> sudo docker ps -a
+
+# pull docker images
+> sudo  docker pull wahid74/ecom-webservice
+
+# create a deployment pod
+> kubectl run ecom-webservice --image=wahid74/ecom-webservice --port=8081
+
+# verify pods
+> kubectl get pods
+> kubectl get pods -o wide
+
+# verify nodes
+> kubectl get nodes
+
+# create a deployment service
+> kubectl expose pod/ecom-webservice --port=8081 --target-port=8081 --type=LoadBalancer  or 
+> kubectl expose pod/ecom-webservice --port=8081 --target-port=8081 --type=NodePort
+
+# verify service
+> kubectl get services
+
+# Scale kubernetese pods
+> kubectl scale pod/ecom-webservice --replicas=2
